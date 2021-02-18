@@ -7,9 +7,13 @@
           <input
             type="email"
             formControlName="emailid"
-            id="emailid"
+            id="emailid"  
             class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }"
           />
+          <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+            <div *ngIf="f.emailid.errors?.required">Email id is required</div>
+          </div>
         </div>
       </div>
       <div class="row rowSpacer">
