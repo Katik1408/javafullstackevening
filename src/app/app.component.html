@@ -28,13 +28,34 @@
 <!--
   Two Way Binding
 -->
-<input type="text" [(ngModel)]="name" />
+<input type="text" [(ngModel)]="name"  />
 {{ name }}
 <!--
   *ngFor
 -->
 
 <hr />
+
+<div [ngClass]="isSpecial ? 'special' : 'notSpecial'">
+  <p>This is special</p>
+</div>
+
+<br />
+
+<div [ngStyle]="{'background-color': 'brown'}" >
+  <p>
+    This is inside another div
+  </p>
+</div>
+
+<div appHighliter>
+  <p>
+    This is important
+  </p>
+</div>
+
+
+
 <br />
 <div class="container">
   <table class="table">
@@ -42,7 +63,7 @@
       <td>Name</td>
       <td>Place</td>
     </tr>
-    <tr *ngFor="let person of people">
+    <tr  [ngStyle] ="{'background-color' : getColor(person.place)}"  *ngFor="let person of people">
       <td>
         {{ person.user }}
       </td>
@@ -57,12 +78,11 @@
 
 <!-- <div class="alert alert-success">Reactive Form</div> -->
 <!-- <reg> </reg> -->
-<!-- <mat-form-field appearance="fill">
-  <mat-label>Choose a date</mat-label>
-  <input matInput [matDatepicker]="picker" />
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field> -->
 
-<div class="alert alert-primary" >Template Driven</div>
+<div class="alert alert-primary">Template Driven</div>
 <app-login></app-login>
+
+
+<p ngNonBindable>
+  {{name}}
+</p>
