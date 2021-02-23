@@ -11,7 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 
-import {HighlighterDirective} from '../app/directives/highlighter.directive'
+import {HighlighterDirective} from '../app/directives/highlighter.directive';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './parent/child/child.component';
+import { SiblingComponent } from './sibling/sibling.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {HighlighterDirective} from '../app/directives/highlighter.directive'
     RegisterComponent,
     PricingComponent,
     LoginComponent,
-    HighlighterDirective
+    HighlighterDirective,
+    ParentComponent,
+    ChildComponent,
+    SiblingComponent
   ],
   imports: [
     BrowserModule,

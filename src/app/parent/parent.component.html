@@ -1,0 +1,29 @@
+<div class="parentDataBox">
+  <h3 style="border: 1px solid black">Parent Component</h3>
+
+  <div class="container" style="margin-top: 20px">
+    <div class="row">
+      <div class="col-md-6">
+        <input
+          type="text"
+          placeholder="Username"
+          class="form-control"
+          [(ngModel)]="username"
+        />
+      </div>
+      <div class="col-md-6">
+        <input type="button" class="btn btn-primary"  value="SendData" (click)="sendData()">
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Message from Child to Parent</div>
+      <div class="card-body">
+        {{ datafromchild }}
+      </div>
+    </div>
+  </div>
+</div>
+<app-child
+  [messagefromparent]="username"
+  (messagetoparent)="receiveData($event)"
+></app-child>
