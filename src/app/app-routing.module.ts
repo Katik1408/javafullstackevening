@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChildComponent } from './parent/child/child.component';
 import { ParentComponent } from './parent/parent.component';
+import { PricingComponent } from './pricing/pricing.component';
 import { SiblingComponent } from './sibling/sibling.component';
+import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'sibling',
     component: SiblingComponent,
+  },
+  {
+    path: 'price',
+    component: PricingComponent,
+  },
+  {
+    path: 'student',
+    component: StudentComponent,
   },
 ];
 

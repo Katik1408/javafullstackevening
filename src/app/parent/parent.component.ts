@@ -9,17 +9,14 @@ import { DataService } from 'src/app/services/data/data.service';
 export class ParentComponent implements OnInit {
   username;
   datafromchild;
-  constructor(private dataService : DataService) {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-  
-  }
+  ngOnInit(): void {}
   receiveData($event) {
     this.datafromchild = $event;
   }
 
-  sendData(){
+  sendData() {
     this.dataService.sendDataToNext(this.username);
   }
-
 }

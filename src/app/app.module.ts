@@ -11,10 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 
-import {HighlighterDirective} from '../app/directives/highlighter.directive';
+import { HighlighterDirective } from '../app/directives/highlighter.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
-import { SiblingComponent } from './sibling/sibling.component'
+import { SiblingComponent } from './sibling/sibling.component';
+import { StudentComponent } from './student/student.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { SiblingComponent } from './sibling/sibling.component'
     HighlighterDirective,
     ParentComponent,
     ChildComponent,
-    SiblingComponent
+    SiblingComponent,
+    StudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { SiblingComponent } from './sibling/sibling.component'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
