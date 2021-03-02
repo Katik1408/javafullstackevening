@@ -6,19 +6,21 @@
       <th>Age</th>
       <th>Action</th>
     </tr>
-    <tr  *ngFor="let student of students" >
-        <td>
-           {{student.name}} 
-        </td>
-        <td>
-            {{student.age}}
-        </td>
-        <td>
-            {{student.place}}
-        </td>
-        <td>
-            <i class="fas fa-trash-alt"></i><i class="far fa-edit"></i>
-        </td>
+    <tr *ngFor="let student of students">
+      <td>
+        {{ student.name }}
+      </td>
+      <td>
+        {{ student.age }}
+      </td>
+      <td>
+        {{ student.place }}
+      </td>
+      <td>
+        <a (click)="delete(student._id)"> <i class="fas fa-trash-alt"> </i></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="far fa-edit"></i>
+      </td>
     </tr>
   </table>
 </div>

@@ -18,4 +18,12 @@ export class StudentComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+  delete(id) {
+    this.crudService.deleteStudent(id).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (err) => console.log(err)
+    );
+  }
 }

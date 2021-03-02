@@ -14,4 +14,9 @@ export class CrudService {
   getAllStudent() {
     return this.httpClient.get(`${API_URL}${GETALLSTUDENTS}`);
   }
+
+  deleteStudent(id){
+    return this.httpClient.delete(`${API_URL}${GETALLSTUDENTS}/${id}`)
+  }
+
 }
