@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CrudService } from 'src/app/services/crud/crud.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CrudService } from 'src/app/services/crud/crud.service';
   styleUrls: ['./student.component.css'],
 })
 export class StudentComponent implements OnInit {
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, private router: Router) {}
   public students;
   ngOnInit(): void {
     this.crudService.getAllStudent().subscribe(
@@ -25,5 +26,8 @@ export class StudentComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+  }
+  createStudent() {
+    this.router.navigateByUrl('student/createstudent');
   }
 }

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card">
+    <form #signup = "ngForm" (ngSubmit)="submit(signup.value)" >
+        <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        class="form-control"
+        
+        [(ngModel)]="signup.Name"
+      />
+      <input
+        type="text"
+        placeholder="Age"
+        class="form-control"
+        name="age"
+        [(ngModel)]="signup.Age"
+      />
+      <input
+        type="text"
+        placeholder="Place"
+        class="form-control"
+        name="place"
+        [(ngModel)]="signup.Place"
+      />
+
+      <input type="submit" class="btn btn-primary" value="Create New Student" >
+    </form>
+  </div>
+</div>

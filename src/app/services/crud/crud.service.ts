@@ -15,8 +15,13 @@ export class CrudService {
     return this.httpClient.get(`${API_URL}${GETALLSTUDENTS}`);
   }
 
-  deleteStudent(id){
-    return this.httpClient.delete(`${API_URL}${GETALLSTUDENTS}/${id}`)
+  deleteStudent(id) {
+    return this.httpClient.delete(`${API_URL}${GETALLSTUDENTS}/${id}`);
   }
 
+  //Creating a Post Request for creating new Student
+
+  addNewStudent(values) {
+    return this.httpClient.post(`${API_URL}${GETALLSTUDENTS}`, values);
+  }
 }

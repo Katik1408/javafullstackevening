@@ -18,6 +18,7 @@ import { SiblingComponent } from './sibling/sibling.component';
 import { StudentComponent } from './student/student.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CreatestudentComponent } from './student/createstudent/createstudent.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChildComponent,
     SiblingComponent,
     StudentComponent,
+    CreatestudentComponent,
   ],
   imports: [
     BrowserModule,
