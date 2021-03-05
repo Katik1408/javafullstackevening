@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/services/crud/crud.service';
+import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'app-student',
@@ -8,7 +9,11 @@ import { CrudService } from 'src/app/services/crud/crud.service';
   styleUrls: ['./student.component.css'],
 })
 export class StudentComponent implements OnInit {
-  constructor(private crudService: CrudService, private router: Router) {}
+  constructor(
+    private crudService: CrudService,
+    private router: Router,
+    private dataSerive: DataService
+  ) {}
   public students;
   ngOnInit(): void {
     this.crudService.getAllStudent().subscribe(
@@ -29,5 +34,9 @@ export class StudentComponent implements OnInit {
   }
   createStudent() {
     this.router.navigateByUrl('student/createstudent');
+  }
+  openEditComponent(student) {
+    this.dataSerive.sendStudentData(student);
+    this.router.navigateByUrl('student/updatestudent');
   }
 }

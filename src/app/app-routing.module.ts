@@ -5,6 +5,7 @@ import { ParentComponent } from './parent/parent.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { SiblingComponent } from './sibling/sibling.component';
 import { CreatestudentComponent } from './student/createstudent/createstudent.component';
+import { EditstudentComponent } from './student/editstudent/editstudent.component';
 import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'student/createstudent',
     component: CreatestudentComponent,
+  },
+  {
+    path: 'student/updatestudent',
+    component: EditstudentComponent,
   },
 ];
 

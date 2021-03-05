@@ -24,4 +24,8 @@ export class CrudService {
   addNewStudent(values) {
     return this.httpClient.post(`${API_URL}${GETALLSTUDENTS}`, values);
   }
+
+  editStudent(id,values){
+    return this.httpClient.put(`${API_URL}${GETALLSTUDENTS}/${id}`, values)
+  }
 }

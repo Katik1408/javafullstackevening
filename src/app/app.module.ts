@@ -17,9 +17,11 @@ import { ChildComponent } from './parent/child/child.component';
 import { SiblingComponent } from './sibling/sibling.component';
 import { StudentComponent } from './student/student.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreatestudentComponent } from './student/createstudent/createstudent.component';
+import { EditstudentComponent } from './student/editstudent/editstudent.component';
 
+import { ErrorInterceptor } from 'src/app/_helpers/error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { CreatestudentComponent } from './student/createstudent/createstudent.co
     SiblingComponent,
     StudentComponent,
     CreatestudentComponent,
+    EditstudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +44,15 @@ import { CreatestudentComponent } from './student/createstudent/createstudent.co
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
