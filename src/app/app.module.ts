@@ -22,6 +22,8 @@ import { CreatestudentComponent } from './student/createstudent/createstudent.co
 import { EditstudentComponent } from './student/editstudent/editstudent.component';
 
 import { ErrorInterceptor } from 'src/app/_helpers/error.interceptor';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { Login2Component } from './login2/login2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,8 @@ import { ErrorInterceptor } from 'src/app/_helpers/error.interceptor';
     StudentComponent,
     CreatestudentComponent,
     EditstudentComponent,
+    DashboardComponent,
+    Login2Component,
   ],
   imports: [
     BrowserModule,

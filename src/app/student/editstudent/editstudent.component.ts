@@ -9,20 +9,39 @@ import { DataService } from 'src/app/services/data/data.service';
   styleUrls: ['./editstudent.component.css'],
 })
 export class EditstudentComponent implements OnInit {
+  public student: Signup;
   constructor(
     private dataSerive: DataService,
     private crudService: CrudService
   ) {
-    
+    // this.dataSerive.currentStudent$.subscribe((st: Signup) => {
+    //   console.log(st);
+    //   this.student.Name = st.Name;
+    //   this.student.Age = st.Age;
+    //   // this.student.Place = st.Place;
+    // });
+    // console.log(this.student);
   }
-  student : Signup;
   ngOnInit(): void {
-    this.dataSerive.currentStudent$.subscribe((st : Signup) => {
-      console.log(st);
-      this.student = st;
-    });
-    console.log(this.student);
+    console.log('Inside ngOninit');
+      // this.dataSerive.currentStudent$.subscribe(
+      //   (st: Signup) => {
+      //     this.student.Name = st.Name;
+      //     this.student.Age = st.Age;
+      //     this.student.Place = st.Place;
+      //     console.log('Data in student inside subs');
+      //     console.log(this.student);
+      //   },
+      //   (err) => console.log(err)
+      // // );
+      // this.dataSerive.currentStudent$.pipe()
+      // console.log('Data in student outside subs');
+      // console.log(this.student);
   }
+
+  // ngOnInit() {
+  //  
+  // }
 
   submit(values) {
     console.log(values);

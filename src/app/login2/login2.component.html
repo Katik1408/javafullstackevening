@@ -1,0 +1,16 @@
+<input placeholder="Enter Username" class="form-control" type="text" #user />
+<br />
+
+<input placeholder="Enter Password" class="form-control" type="password" #pwd />
+<br />
+
+<input
+  placeholder="Enter Username"
+  class="btn btn-primary"
+  value="Submit"
+  (click)="submit(user.value, pwd.value)"
+  type="submit"
+/>
+<br />
+
+<p class="alert alert-danger" *ngIf="msg"> {{msg}} </p>

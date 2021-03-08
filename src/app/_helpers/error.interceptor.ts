@@ -12,6 +12,10 @@ import { retry, finalize, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ErrorInterceptor implements HttpInterceptor {
+
+  errormessage : string;
+
+  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
     return next.handle(req).pipe(
       retry(1),
@@ -20,6 +24,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         if (err) {
           switch (err.status) {
             case 0:
+              this.errormessage = err.statusText;
               console.log('Inside Case 0');
               console.log(err.statusText);
               console.log(err.message);
@@ -35,4 +40,6 @@ export class ErrorInterceptor implements HttpInterceptor {
       })
     );
   }
+
+  
 }
