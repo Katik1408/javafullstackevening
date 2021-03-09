@@ -11,6 +11,7 @@ import { EditstudentComponent } from './student/editstudent/editstudent.componen
 import { StudentComponent } from './student/student.component';
 import { AuthGuard } from 'src/app/_guards/auth.guard';
 import { Login2Component } from './login2/login2.component';
+
 const routes: Routes = [
   {
     path: 'parent',
@@ -45,6 +46,11 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'lazy',
+    loadChildren: () =>
+      import('src/app/lazy/lazy.module').then((m) => m.LazyModule),
   },
 ];
 
